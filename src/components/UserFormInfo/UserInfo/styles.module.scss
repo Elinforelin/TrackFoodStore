@@ -1,0 +1,16 @@
+.arrangement {
+  display: flex;
+  flex-direction: column;
+  .textFieldRoot {
+    & input {
+      font-family: "Montserrat", sans-serif;
+      color: hsl(0, 0%, 20%);
+    }
+  }
+  .paragraph {
+    color: red;
+    font-size: 12px;
+    margin: 5px 0 15px 0;
+    font-family: "Montserrat", sans-serif;
+  }
+}

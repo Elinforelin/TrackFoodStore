@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../store/shoppingCart/reducer";
 import { MenuListItem } from "../../../store/shoppingCart/type";
-import { appropriateOptionId, generatePassword } from "../../../utils/utils";
+import { appropriateOptionId, generateId } from "../../../utils/utils";
 
 export const useCardItem = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,6 @@ export const useCardItem = () => {
     if (!openId) {
       setIsIncludeMeat(false);
     }
-    console.log("onclick");
   };
 
   const selectOption = (e: MouseEvent) => {
@@ -48,7 +47,7 @@ export const useCardItem = () => {
       return dispatch(
         addToCart({
           ...item,
-          id: generatePassword(),
+          id: generateId(),
           orderIdWithOptionsId: appropriateOptionId(item),
         })
       );
@@ -57,7 +56,7 @@ export const useCardItem = () => {
       addToCart({
         ...selectedFood,
         orderIdWithOptionsId: appropriateOptionId(selectedFood),
-        id: generatePassword(),
+        id: generateId(),
       })
     );
   };

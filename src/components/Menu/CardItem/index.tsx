@@ -1,23 +1,21 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import {
   Button,
   Card,
   CardActions,
   CardContent,
   CardMedia,
-  Checkbox,
-  FormControlLabel,
   ListItemButton,
   ListItemText,
   Typography,
 } from "@mui/material";
 import { Collapse } from "@mui/material";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
-import { MenuListItem } from "../../../store/shoppingCart/type";
 
+import { MenuListItem } from "../../../store/shoppingCart/type";
 import classes from "./styles.module.scss";
 import { ProductOption } from "./ProductOption";
-import { useCardItem } from "./UseCardItem";
+import { useCardItem } from "./useCardItem";
 
 type CardItemProps = {
   item: MenuListItem;
@@ -37,7 +35,15 @@ export const CardItem: FC<CardItemProps> = ({ item }) => {
         overflow: "visible",
       }}
     >
-      <CardMedia component="img" alt="food" image={item.img.src} />
+      <CardMedia
+        style={{
+          height: 142,
+          width: 142,
+        }}
+        component="img"
+        alt="food"
+        image={item.img.src}
+      />
       <CardContent
         style={{
           padding: 2,
@@ -61,7 +67,7 @@ export const CardItem: FC<CardItemProps> = ({ item }) => {
         <Typography
           variant="h5"
           component="div"
-          style={{ fontFamily: "Montserrat" }}
+          style={{ fontFamily: "Montserrat", marginTop: 10 }}
         >
           {isIncludeMeat && openId === item.id ? item.price + 15 : item.price}
           грн

@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { generatePassword } from "../../utils/utils";
+import { generateId } from "../../utils/utils";
 import {
   addToCart,
   deleteFromCart,
@@ -21,7 +21,7 @@ export const useShoppingCartItem = ({ item }) => {
     dispatch(
       addToCart({
         ...item,
-        id: generatePassword(),
+        id: generateId(),
       })
     );
   };

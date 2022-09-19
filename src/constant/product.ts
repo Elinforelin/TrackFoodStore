@@ -14,10 +14,16 @@ import pasta from "../assets/pasta.png";
 import { StaticImageData } from "next/image";
 import { MenuListItem } from "../store/shoppingCart/type";
 
-type ProductsType = {
-  porridges: { id: number; name: string; img: StaticImageData }[];
-  meat: { id: number; name: string; img: StaticImageData }[];
-  vegetables: { id: number; name: string; img: StaticImageData }[];
+type constructorProductItemType = {
+  id: string;
+  name: string;
+  img: StaticImageData;
+};
+
+type constructorProductType = {
+  porridges: constructorProductItemType[];
+  meat: constructorProductItemType[];
+  vegetables: constructorProductItemType[];
 };
 
 type Dishes = {
@@ -28,18 +34,18 @@ type Dishes = {
   options?: { name: string; enable: boolean }[];
 };
 
-// export const productsData: ProductsType = {
-//   porridges: [
-//     { id: Date.now(), name: "Греча", img: grecha },
-//     { id: Date.now(), name: "Рис", img: rice },
-//     { id: Date.now(), name: "Пюре", img: puree },
-//   ],
-//   meat: [{ id: 1, name: "М'ясо", img: meat }],
-//   vegetables: [
-//     { id: Date.now(), name: "Кукурудза", img: pea },
-//     { id: Date.now(), name: "Горошок", img: corn },
-//   ],
-// };
+export const constructorProduct: constructorProductType = {
+  porridges: [
+    { id: String(Date.now() + Math.random()), name: "Греча", img: grecha },
+    { id: String(Date.now() + Math.random()), name: "Рис", img: rice },
+    { id: String(Date.now() + Math.random()), name: "Пюре", img: puree },
+  ],
+  meat: [{ id: String(Date.now() + Math.random()), name: "М'ясо", img: meat }],
+  vegetables: [
+    { id: String(Date.now() + Math.random()), name: "Кукурудза", img: pea },
+    { id: String(Date.now() + Math.random()), name: "Горошок", img: corn },
+  ],
+};
 
 export const firstDish: MenuListItem[] = [
   {

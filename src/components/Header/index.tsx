@@ -11,7 +11,7 @@ const headerButtons = [
   { href: "/first", name: "Основні страви" },
   { href: "/second", name: "Супи" },
   { href: "/breakfast", name: "Сніданки" },
-  { href: "/constructor", name: "Конструктор" },
+  // { href: "/constructor", name: "Конструктор" },
 ];
 
 export const Header: FC = () => {
@@ -30,7 +30,12 @@ export const Header: FC = () => {
         </div>
       ) : (
         <>
-          <HeaderShoppingCartIcon />
+          <div className={classes.headerTrackFood}>
+            <h2>
+              <span>Track</span>Food
+            </h2>
+            <HeaderShoppingCartIcon />
+          </div>
           <ul className={classes.linksContainer}>
             {headerButtons.map((btn) => (
               <li

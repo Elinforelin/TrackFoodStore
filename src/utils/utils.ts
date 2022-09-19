@@ -1,6 +1,6 @@
 import { MenuListItem } from "../store/shoppingCart/type";
 
-export const generatePassword = () => {
+export const generateId = () => {
   return Math.random().toString(36).slice(-8);
 };
 

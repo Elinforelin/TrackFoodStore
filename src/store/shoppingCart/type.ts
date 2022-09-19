@@ -11,7 +11,7 @@ export type MenuListItem = {
   name: string;
   img: StaticImageData;
   price: number;
-  orderIdWithOptionsId: string;
+  orderIdWithOptionsId?: string;
   options: MenuListItemOption[];
   counter?: number | undefined;
 };

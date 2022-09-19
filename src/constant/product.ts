@@ -26,13 +26,13 @@ type constructorProductType = {
   vegetables: constructorProductItemType[];
 };
 
-type Dishes = {
-  id: string;
-  name: string;
-  img: StaticImageData;
-  price: number;
-  options?: { name: string; enable: boolean }[];
-};
+// type Dishes = {
+//   id: string;
+//   name: string;
+//   img: StaticImageData;
+//   price: number;
+//   options?: { name: string; enable: boolean }[];
+// };
 
 export const constructorProduct: constructorProductType = {
   porridges: [
@@ -97,12 +97,13 @@ export const firstDish: MenuListItem[] = [
     ],
   },
 ];
-export const secondDish: Dishes[] = [
+export const secondDish: MenuListItem[] = [
   {
     id: String(Date.now() + Math.random()),
     name: "Cуп кукурудзяний з овочами",
     img: sub,
     price: 50,
+    orderIdWithOptionsId: "",
     options: [
       { name: "М'ясо", enable: false },
       { name: "Часник", enable: false },
@@ -114,6 +115,7 @@ export const secondDish: Dishes[] = [
     name: "Cуп гороховий з овочами",
     img: sub,
     price: 50,
+    orderIdWithOptionsId: "",
     options: [
       { name: "М'ясо", enable: true },
       { name: "Часник", enable: false },
@@ -125,6 +127,7 @@ export const secondDish: Dishes[] = [
     name: "Cуп рисовий з куркою і овочами",
     img: sub,
     price: 50,
+    orderIdWithOptionsId: "",
     options: [
       { name: "М'ясо", enable: true },
       { name: "Часник", enable: false },
@@ -136,6 +139,7 @@ export const secondDish: Dishes[] = [
     name: "Cуп гречаний з овочами",
     img: sub,
     price: 50,
+    orderIdWithOptionsId: "",
     options: [
       { name: "М'ясо", enable: true },
       { name: "Часник", enable: false },
@@ -143,7 +147,7 @@ export const secondDish: Dishes[] = [
     ],
   },
 ];
-export const sweetPorige: Dishes[] = [
+export const sweetPorige: MenuListItem[] = [
   {
     id: String(Date.now() + Math.random()),
     name: "Вівсяна каша 7 злаків",

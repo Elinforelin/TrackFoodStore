@@ -1,16 +1,15 @@
-import { FC, FormEvent, useMemo, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { FC, useMemo, useState } from "react";
+import { useSelector } from "react-redux";
 
 import { Header } from "../src/components/Header";
 import { selectShoppingCart } from "../src/store/shoppingCart/select";
 import classes from "../styles/ShoppingCart.module.scss";
 
-import { MenuListItem } from "../src/store/shoppingCart/type";
 import emptyCart from "../src/assets/emptyCart/emptyCart.png";
-import { generatePassword } from "../src/utils/utils";
 import { ShoppingCartItem } from "../src/components/ShoppingCartItem";
 import { Button } from "@mui/material";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const ShoppingCart: FC = () => {
   const router = useRouter();
@@ -52,7 +51,7 @@ const ShoppingCart: FC = () => {
         <div>
           <h1 className={classes.title}>Кошик порожній</h1>
           <div className={classes.imageEmptyCart}>
-            <img src={emptyCart.src} alt="" />
+            <Image src={emptyCart.src} alt="" />
           </div>
         </div>
       ) : (

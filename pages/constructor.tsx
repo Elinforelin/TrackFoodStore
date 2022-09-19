@@ -27,18 +27,18 @@ const Constructor: FC = () => {
     ],
   });
 
-  const onClickBasisHandler = (e) => {
-    setConstructoredProduct((prev) => {
-      return { ...prev, name: e.target.value, id: generateId() };
-    });
-  };
+  // const onClickBasisHandler = (e) => {
+  //   setConstructoredProduct((prev) => {
+  //     return { ...prev, name: e.target.value, id: generateId() };
+  //   });
+  // };
 
   console.log(constructoredProduct);
 
   return (
     <div>
       <Header />
-      <div className={classes.constructor}>
+      {/* <div className={classes.constructor}>
         <div className={classes.constructorTotal}>Ваш вибір: </div>
         <div className={classes.options}>
           <FormControl>
@@ -99,7 +99,7 @@ const Constructor: FC = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -36,7 +36,7 @@ export const useDeliveryInfo = () => {
   };
   useEffect(() => {
     dispatch(fetchSettlements(onChangeValueSettlements));
-  }, [onChangeValueSettlements]);
+  }, [onChangeValueSettlements, dispatch]);
 
   const updatedArrayCities = useMemo(() => {
     return settlements?.map((item: ItemType) => {

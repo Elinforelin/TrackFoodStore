@@ -16,8 +16,8 @@ import { useShoppingCartItem } from "./useShoppingCartItem";
 
 export type ShoppingCartItemProps = {
   item: MenuListItem;
-  quantitiOfProduct: number;
-  setQuantitiOfProduct: Dispatch<SetStateAction<number>>;
+  // quantitiOfProduct: number;
+  // setQuantitiOfProduct: Dispatch<SetStateAction<number>>;
 };
 
 export const ShoppingCartItem: FC<ShoppingCartItemProps> = ({ item }) => {
@@ -108,7 +108,11 @@ export const ShoppingCartItem: FC<ShoppingCartItemProps> = ({ item }) => {
         <div>{item.summary} грн</div>
 
         <Button
-          onClick={() => onClickDeleteItemFromCart(item.orderIdWithOptionsId)}
+          onClick={() => {
+            if (item.orderIdWithOptionsId) {
+              onClickDeleteItemFromCart(item.orderIdWithOptionsId);
+            }
+          }}
           variant="contained"
           classes={{ contained: classes.buttonContainedDelete }}
         >

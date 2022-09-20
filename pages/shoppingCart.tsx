@@ -31,11 +31,13 @@ const ShoppingCart: FC = () => {
     });
     const uniqueIds: string[] = [];
     const unique = updatedArray.filter((el) => {
-      const isDuplicate = uniqueIds.includes(el.orderIdWithOptionsId);
-      if (!isDuplicate) {
-        setTotal((prev) => prev + el.summary);
-        uniqueIds.push(el.orderIdWithOptionsId);
-        return true;
+      if (el.orderIdWithOptionsId) {
+        const isDuplicate = uniqueIds.includes(el.orderIdWithOptionsId);
+        if (!isDuplicate) {
+          setTotal((prev) => prev + el.summary);
+          uniqueIds.push(el.orderIdWithOptionsId);
+          return true;
+        }
       }
       return false;
     });

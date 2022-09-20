@@ -5,7 +5,7 @@ import { FieldErrorsImpl, UseFormRegister } from "react-hook-form";
 import classes from "./styles.module.scss";
 
 import { customStyles } from "./customSelectStyle";
-import { UserFormInputs } from "../../../../pages/userForm";
+import { SelectItemType, UserFormInputs } from "../../../../pages/userForm";
 import { useDeliveryInfo } from "./useDeliveryInfo";
 
 export const DeliveryInfo: FC<{
@@ -29,7 +29,7 @@ export const DeliveryInfo: FC<{
         onInputChange={onInputChangeSelect}
         options={updatedArrayCities}
         {...(register("settlement"),
-        { onChange: (e: SyntheticEvent) => onChangeSelect(e) })}
+        { onChange: (item) => onChangeSelect(item as SelectItemType) })}
       />
       <p className={classes.paragraph}>{errors.settlement?.label?.message}</p>
       <Select

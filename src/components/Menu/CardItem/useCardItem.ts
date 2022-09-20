@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../store/shoppingCart/reducer";
 import { MenuListItem } from "../../../store/shoppingCart/type";
@@ -19,7 +19,7 @@ export const useCardItem = () => {
     }
   };
 
-  const selectOption = (e: MouseEvent) => {
+  const selectOption: MouseEventHandler<HTMLButtonElement> = (e) => {
     const { checked, value } = e.target as HTMLInputElement;
 
     if (value === "М'ясо" && checked === true) {
@@ -34,9 +34,11 @@ export const useCardItem = () => {
         return {
           ...obj,
           price: value === "М'ясо" ? obj.price + 15 : obj.price,
-          options: obj.options.map((item) =>
-            item.name !== value ? item : { ...item, enable: !item.enable }
-          ),
+          options: obj.options
+            ? obj.options.map((item) =>
+                item.name !== value ? item : { ...item, enable: !item.enable }
+              )
+            : undefined,
         };
       });
     }

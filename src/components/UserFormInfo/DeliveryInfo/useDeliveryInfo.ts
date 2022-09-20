@@ -9,7 +9,6 @@ import {
   selectSettlements,
   selectWarehouse,
 } from "../../../store/userForm/select";
-import { AppDispatch } from "../../../store/store";
 import { setSelectedSettlement } from "../../../store/userForm/reducer";
 import { SelectItemType } from "../../../../pages/userForm";
 
@@ -19,7 +18,7 @@ type ItemType = {
 };
 
 export const useDeliveryInfo = () => {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch() as any;
   const settlements = useSelector(selectSettlements);
   const warehouses = useSelector(selectWarehouse);
   const [onChangeValueSettlements, setOnChangeValueSettlements] = useState("");
@@ -29,8 +28,6 @@ export const useDeliveryInfo = () => {
   };
 
   const onChangeSelect = (item: SelectItemType) => {
-    console.log(item);
-
     setSelectedSettlement(item.value);
     dispatch(fetchWarehouse(item.value));
   };

@@ -8,7 +8,7 @@ const Breakfast: FC = () => {
   return (
     <div className={classes.wrapper}>
       <Header />
-      <Menu menuList={sweetPorige} title="Сніданок" />
+      <Menu menuList={sweetPorige} title="Сніданки" />
     </div>
   );
 };

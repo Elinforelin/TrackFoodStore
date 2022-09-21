@@ -21,7 +21,13 @@
     margin: 0 auto;
     font-family: "Montserrat";
     position: relative;
-
+    .doneImage {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 17px;
+      right: 5px;
+    }
     .option {
       display: flex;
       justify-content: space-between;

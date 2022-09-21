@@ -52,8 +52,12 @@ const ShoppingCart: FC = () => {
       {!shoppingCartWithCounter.length ? (
         <div>
           <h1 className={classes.title}>Кошик порожній</h1>
-          <div className={classes.imageEmptyCart}>
-            <Image src={emptyCart.src} alt="" />
+          <div className={classes.emptyCartBox}>
+            <img
+              className={classes.emptyCartImg}
+              src={emptyCart.src}
+              alt="Empty cart"
+            />
           </div>
         </div>
       ) : (

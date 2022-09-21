@@ -1,6 +1,7 @@
 import { MouseEventHandler, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../../store/shoppingCart/reducer";
+import { selectShoppingCart } from "../../../store/shoppingCart/select";
 import { MenuListItem } from "../../../store/shoppingCart/type";
 import { appropriateOptionId, generateId } from "../../../utils/utils";
 
@@ -9,6 +10,7 @@ export const useCardItem = () => {
   const [openId, setOpenId] = useState("");
   const [selectedFood, setSelectedFood] = useState<MenuListItem | null>(null);
   const [isIncludeMeat, setIsIncludeMeat] = useState<boolean>(false);
+  // const [producrCard, setProductCart] = use
 
   const handleClick = (item: MenuListItem) => {
     setSelectedFood(item);
@@ -44,6 +46,8 @@ export const useCardItem = () => {
     }
   };
 
+  console.log(selectedFood);
+
   const addToCartHandler = (item: MenuListItem) => {
     if (selectedFood === null) {
       return dispatch(
@@ -63,5 +67,12 @@ export const useCardItem = () => {
     );
   };
 
-  return { handleClick, selectOption, addToCartHandler, isIncludeMeat, openId };
+  return {
+    handleClick,
+    selectOption,
+    addToCartHandler,
+    isIncludeMeat,
+    openId,
+    selectedFood,
+  };
 };

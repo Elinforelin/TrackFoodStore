@@ -34,7 +34,7 @@
     justify-content: space-between;
     h2 {
       margin: 10px;
-      color: #004eff;
+      color: #459ce7;
       text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
       span {
         color: yellow;
@@ -52,14 +52,16 @@
     margin: 5px 0;
     .link {
       color: rgb(59, 59, 59);
-      font-size: 16px;
+      font-size: 14px;
       line-height: 133%;
       font-family: "Montserrat", sans-serif;
       text-transform: capitalize;
+      font-weight: 500;
     }
     .active {
       color: rgb(219, 69, 15);
-      text-decoration: underline;
+      border-bottom: 2px solid rgb(219, 69, 15);
+      // text-decoration: underline;
     }
   }
 }

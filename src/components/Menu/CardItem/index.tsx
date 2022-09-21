@@ -16,14 +16,21 @@ import { MenuListItem } from "../../../store/shoppingCart/type";
 import classes from "./styles.module.scss";
 import { ProductOption } from "./ProductOption";
 import { useCardItem } from "./useCardItem";
+import doneImg from "../../../assets/emptyCart/check.png";
 
 type CardItemProps = {
   item: MenuListItem;
 };
 
 export const CardItem: FC<CardItemProps> = ({ item }) => {
-  const { handleClick, selectOption, addToCartHandler, isIncludeMeat, openId } =
-    useCardItem();
+  const {
+    handleClick,
+    selectOption,
+    addToCartHandler,
+    isIncludeMeat,
+    openId,
+    selectedFood,
+  } = useCardItem();
 
   return (
     <Card
@@ -69,24 +76,33 @@ export const CardItem: FC<CardItemProps> = ({ item }) => {
           component="div"
           style={{ fontFamily: "Montserrat", marginTop: 10 }}
         >
-          {isIncludeMeat && openId === item.id ? item.price + 15 : item.price}
+          {selectedFood ? selectedFood.price : item.price}
           грн
         </Typography>
         <CardActions
           style={{ justifyContent: "center", overflow: "visible" }}
           classes={{ root: classes.cardActionsRoot }}
         >
-          <Button
-            style={{
-              textAlign: "center",
-              fontFamily: "Montserrat",
-              lineHeight: 1,
-            }}
-            size="small"
-            onClick={() => addToCartHandler(item)}
-          >
-            Додати в корзину
-          </Button>
+          <div>
+            <Button
+              style={{
+                textAlign: "center",
+                fontFamily: "Montserrat",
+                lineHeight: 1,
+                position: "relative",
+              }}
+              size="small"
+              onClick={() => addToCartHandler(item)}
+            >
+              Додати в корзину
+            </Button>
+            <img
+              src={doneImg.src}
+              className={classes.doneImage}
+              alt=""
+              hidden
+            />
+          </div>
           {item.options && (
             <div>
               <div className={classes.option}>
@@ -94,7 +110,9 @@ export const CardItem: FC<CardItemProps> = ({ item }) => {
                   primary="Додатково"
                   classes={{ root: classes.listItemText }}
                   style={{ fontFamily: "Montserrat" }}
-                  onClick={() => handleClick(item)}
+                  onClick={() =>
+                    handleClick(selectedFood ? selectedFood : item)
+                  }
                 />
                 {openId === item.id ? <ExpandLess /> : <ExpandMore />}
               </div>
@@ -108,14 +126,23 @@ export const CardItem: FC<CardItemProps> = ({ item }) => {
                   sx={{ pl: 4 }}
                   classes={{ root: classes.listItemButtonRoot }}
                 >
-                  {item.options.map((opt) => (
-                    <ProductOption
-                      opt={opt}
-                      id={item.id}
-                      selectOption={selectOption}
-                      key={item.name + item.id}
-                    />
-                  ))}
+                  {selectedFood
+                    ? selectedFood.options?.map((opt) => (
+                        <ProductOption
+                          opt={opt}
+                          id={item.id}
+                          selectOption={selectOption}
+                          key={opt.name + item.id}
+                        />
+                      ))
+                    : item.options.map((opt) => (
+                        <ProductOption
+                          opt={opt}
+                          id={item.id}
+                          selectOption={selectOption}
+                          key={opt.name + item.id}
+                        />
+                      ))}
                 </ListItemButton>
               </Collapse>
             </div>

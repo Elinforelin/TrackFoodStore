@@ -1,7 +1,7 @@
-import { FC, useEffect, useMemo, useState } from "react";
+import { FC } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { number, object, string } from "yup";
+import { object, string } from "yup";
 import classes from "../styles/userForm.module.scss";
 
 import { UserInfo } from "../src/components/UserFormInfo/UserInfo";
@@ -14,7 +14,7 @@ const phoneRegExp =
 const schema = object({
   firstName: string()
     .matches(
-      /^[A-Za-z.!@?#"$%&:;() *\+,\/;\-=[\\\]\^_{|}<>\u0400-\u04FF]*$/,
+      /^[A-Za-z.!@?#"$%&:;() *+,/;\-=[\\\]^_{|}<>\u0400-\u04FF]*$/,
       "Для цього поля дозволені лише алфавіт"
     )
     .min(2, "Ім`я має містити не меньше 2 символів")
@@ -22,7 +22,7 @@ const schema = object({
   lastName: string()
     .required("Це поле є обов`язковим")
     .matches(
-      /^[A-Za-z.!@?#"$%&:;() *\+,\/;\-=[\\\]\^_{|}<>\u0400-\u04FF]*$/,
+      /^[A-Za-z.!@?#"$%&:;() *+,/;\-=[\\\]^_{|}<>\u0400-\u04FF]*$/,
       "Для цього поля дозволені лише алфавіт"
     )
     .min(2, "Прізвище має містити не меньше 2 символів"),

@@ -1,5 +1,5 @@
 import { Checkbox, FormControlLabel } from "@mui/material";
-import { Dispatch, FC, MouseEventHandler, SetStateAction } from "react";
+import { FC, MouseEventHandler } from "react";
 import { MenuListItemOption } from "../../../../store/shoppingCart/type";
 
 import classes from "./styles.module.scss";

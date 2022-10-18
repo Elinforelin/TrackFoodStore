@@ -1,5 +1,5 @@
-import { ChangeEvent, FocusEvent, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { ChangeEvent, FocusEvent, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { generateId } from "../../utils/utils";
 import {
   addToCart,
@@ -7,17 +7,23 @@ import {
   removeFromCart,
 } from "../../store/shoppingCart/reducer";
 import { MenuListItem } from "../../store/shoppingCart/type";
-import { selectShoppingCart } from "../../store/shoppingCart/select";
 
-export const useShoppingCartItem = ({ item }: { item: MenuListItem }) => {
+export const useShoppingCartItem = (item: {
+  id: string;
+  list: MenuListItem[];
+}) => {
   const dispatch = useDispatch();
-  const shoppingCart = useSelector(selectShoppingCart);
   const [amountOfProduct, setAmountOfProduct] = useState<string>(
-    String(item.counter)
+    String(item.list.length)
   );
+
+  useEffect(() => {
+    setAmountOfProduct(String(item.list.length));
+  }, [item]);
+
   const [inputIsEmpty, setInputIsEmpty] = useState(false);
+
   const onClickAdd = (item: MenuListItem) => {
-    setAmountOfProduct((prev) => String(+prev + 1));
     dispatch(
       addToCart({
         ...item,
@@ -26,48 +32,25 @@ export const useShoppingCartItem = ({ item }: { item: MenuListItem }) => {
     );
   };
 
-  const onClickRemove = (id: string) => {
-    setAmountOfProduct((prev) => String(+prev - 1));
-    dispatch(removeFromCart(id));
+  const onClickRemove = (item: MenuListItem) => {
+    dispatch(removeFromCart(item));
   };
 
   const onChangeCount = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    item: MenuListItem
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    console.log(e.target.value);
     setAmountOfProduct(e.target.value);
+
     if (!e.target.value) {
-      return setInputIsEmpty(true);
+      setInputIsEmpty(true);
+    } else {
+      setInputIsEmpty(false);
     }
 
     const regex = /^\d*\.?\d*$/;
 
     if (!regex.test(e.target.value)) {
-      return setAmountOfProduct("");
-    }
-
-    const shoppingCartIncludesItemLength = shoppingCart.filter(
-      (obj) => obj.orderIdWithOptionsId === item.orderIdWithOptionsId
-    ).length;
-
-    setInputIsEmpty(false);
-
-    const difference = +amountOfProduct - shoppingCartIncludesItemLength;
-
-    if (difference > 0) {
-      for (let i = 0; i < difference; i++) {
-        dispatch(
-          addToCart({
-            ...item,
-            id: generateId(),
-          })
-        );
-      }
-    } else {
-      for (let i = 0; i < Math.abs(difference); i++) {
-        dispatch(removeFromCart(item.id));
-      }
+      setAmountOfProduct("");
     }
   };
 
@@ -77,11 +60,28 @@ export const useShoppingCartItem = ({ item }: { item: MenuListItem }) => {
 
   const onBlurdHandler = (e: FocusEvent<HTMLInputElement>) => {
     if (e.target.value === "") {
-      if (typeof item.counter !== "undefined") {
-        setAmountOfProduct(String(item.counter));
+      if (item.list.length) {
+        setAmountOfProduct(String(item.list.length));
       }
+      return;
     } else {
-      setAmountOfProduct(e.target.value);
+      setInputIsEmpty(false);
+
+      const difference = +amountOfProduct - item.list.length;
+      if (difference > 0) {
+        for (let i = 0; i < difference; i++) {
+          dispatch(
+            addToCart({
+              ...item.list[0],
+              id: generateId(),
+            })
+          );
+        }
+      } else {
+        for (let i = 0; i < Math.abs(difference); i++) {
+          dispatch(removeFromCart(item.id));
+        }
+      }
     }
   };
 

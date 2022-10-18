@@ -7,7 +7,6 @@ export type MenuListItemOption = {
 
 export type MenuListItem = {
   id: string;
-  orderId?: string;
   name: string;
   img: StaticImageData;
   price: number;
@@ -18,7 +17,7 @@ export type MenuListItem = {
 };
 
 export type ISShoppingCart = {
-  shoppingCartList: MenuListItem[];
+  shoppingCartList: { id: string; list: MenuListItem[] }[];
   // shoppingCartList: Record<
   //   string, // product id
   //   MenuListItem // product

@@ -20,12 +20,12 @@ const settlementsSlice = createSlice({
     setSelectedWarehouse: (state, action) => {
       state.selectedWarehouse = action.payload;
     },
-    cleandWarehousesList: (state, action) => {
+    cleandWarehousesList: (state) => {
       state.warehousesList = [];
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchSettlements.pending, (state, action) => {
+    builder.addCase(fetchSettlements.pending, (state) => {
       state.loading = "pending";
     });
     builder.addCase(fetchSettlements.fulfilled, (state, action) => {
@@ -33,17 +33,17 @@ const settlementsSlice = createSlice({
       state.settlementsList = action.payload.data;
       state.warehousesList = [];
     });
-    builder.addCase(fetchSettlements.rejected, (state, action) => {
+    builder.addCase(fetchSettlements.rejected, (state) => {
       state.loading = "failed";
     });
-    builder.addCase(fetchWarehouse.pending, (state, action) => {
+    builder.addCase(fetchWarehouse.pending, (state) => {
       state.loading = "pending";
     });
     builder.addCase(fetchWarehouse.fulfilled, (state, action) => {
       state.loading = "succeeded";
       state.warehousesList = action.payload.data;
     });
-    builder.addCase(fetchWarehouse.rejected, (state, action) => {
+    builder.addCase(fetchWarehouse.rejected, (state) => {
       state.loading = "failed";
     });
   },

@@ -18,6 +18,7 @@ type ItemType = {
 };
 
 export const useDeliveryInfo = () => {
+  // eslint-disable-next-line
   const dispatch = useDispatch() as any;
   const settlements = useSelector(selectSettlements);
   const warehouses = useSelector(selectWarehouse);

@@ -1,4 +1,4 @@
-import { FC, useMemo, useState } from "react";
+import { FC, useMemo } from "react";
 import { useSelector } from "react-redux";
 
 import { Header } from "../src/components/Header";
@@ -9,47 +9,23 @@ import emptyCart from "../src/assets/emptyCart/emptyCart.png";
 import { ShoppingCartItem } from "../src/components/ShoppingCartItem";
 import { Button } from "@mui/material";
 import { useRouter } from "next/router";
-import Image from "next/image";
 
 const ShoppingCart: FC = () => {
   const router = useRouter();
   const shoppingCart = useSelector(selectShoppingCart);
-  // const [quantitiOfProduct, setQuantitiOfProduct] = useState<number>(1);
-  const [total, setTotal] = useState(0);
-  const shoppingCartWithCounter = useMemo(() => {
-    setTotal(0);
-    const updatedArray = shoppingCart.map((obj) => {
-      const numberOfProduct = shoppingCart.filter(
-        (item) => item.orderIdWithOptionsId === obj.orderIdWithOptionsId
-      ).length;
-
-      return {
-        ...obj,
-        counter: numberOfProduct,
-        summary: obj.price * numberOfProduct,
-      };
-    });
-    const uniqueIds: string[] = [];
-    const unique = updatedArray.filter((el) => {
-      if (el.orderIdWithOptionsId) {
-        const isDuplicate = uniqueIds.includes(el.orderIdWithOptionsId);
-        if (!isDuplicate) {
-          setTotal((prev) => prev + el.summary);
-          uniqueIds.push(el.orderIdWithOptionsId);
-          return true;
-        }
-      }
-      return false;
-    });
-    return unique;
-  }, [shoppingCart]);
 
   const onClickPushtoFormPage = () => router.push("/userForm");
+
+  const total = useMemo(() => {
+    return shoppingCart
+      .map(({ list }) => list.reduce((acc, next) => acc + next.price, 0))
+      .reduce((acc, next) => acc + next, 0);
+  }, [shoppingCart]);
 
   return (
     <div className={classes.wrapper}>
       <Header />
-      {!shoppingCartWithCounter.length ? (
+      {!shoppingCart.length ? (
         <div>
           <h1 className={classes.title}>Кошик порожній</h1>
           <div className={classes.emptyCartBox}>
@@ -63,7 +39,7 @@ const ShoppingCart: FC = () => {
       ) : (
         <>
           <ul className={classes.shoppingCartList}>
-            {shoppingCartWithCounter.map((item) => (
+            {shoppingCart.map((item) => (
               <ShoppingCartItem key={item.id} item={item} />
             ))}
           </ul>

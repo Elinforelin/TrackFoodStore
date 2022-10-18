@@ -9,14 +9,17 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "lint": "eslint",
     "start": "next start -p $PORT",
     "heroku-postbuild": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "beauty": "prettier --write src/ pages/"
   },
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@hookform/resolvers": "^2.9.7",
+    "@material-ui/core": "^4.12.4",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.10.1",
     "@reduxjs/toolkit": "^1.8.5",
@@ -34,8 +37,11 @@
     "@types/node": "18.7.6",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
-    "eslint": "8.22.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "eslint": "^8.25.0",
     "eslint-config-next": "12.2.5",
+    "prettier": "2.7.1",
     "typescript": "4.7.4"
   }
 }

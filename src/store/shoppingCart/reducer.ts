@@ -1,10 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { StaticImageData } from "next/image";
 import { ISShoppingCart } from "./type";
-
-// type IS = {
-//   constructedFood: [{ id: number; name: string; img: StaticImageData | "" }];
-// };
 
 const initialState: ISShoppingCart = {
   shoppingCartList: [],
@@ -16,24 +11,51 @@ const shoppingCartSlice = createSlice({
   initialState,
   reducers: {
     addToCart(state, action) {
-      state.shoppingCartList.push(action.payload);
-      state.quantiti = state.quantiti + 1;
+      const productInCart = state.shoppingCartList.find(
+        (prod) => prod.id === action.payload.orderIdWithOptionsId
+      );
+
+      if (productInCart) {
+        productInCart?.list.push(action.payload);
+        state.quantiti = state.quantiti + 1;
+        return;
+      }
+
+      return {
+        ...state,
+        quantiti: state.quantiti + 1,
+        shoppingCartList: [
+          ...state.shoppingCartList,
+          { id: action.payload.orderIdWithOptionsId, list: [action.payload] },
+        ],
+      };
     },
     removeFromCart(state, action) {
-      state.quantiti = state.quantiti - 1;
+      const productInCart = state.shoppingCartList.find(
+        (prod) => prod.id === action.payload
+      );
+      console.log(action.payload, productInCart);
+
+      if (productInCart) {
+        productInCart?.list.pop();
+        state.quantiti = state.quantiti - 1;
+        return;
+      }
+    },
+
+    deleteFromCart(state, action) {
+      console.log(action.payload);
+
+      const shoppingCartListLength = state.shoppingCartList.find(
+        (item) => item.id === action.payload
+      )?.list.length;
+
+      if (shoppingCartListLength) {
+        state.quantiti = state.quantiti - shoppingCartListLength;
+      }
 
       state.shoppingCartList = state.shoppingCartList.filter(
         (item) => item.id !== action.payload
-      );
-    },
-    deleteFromCart(state, action) {
-      const shoppingCartLisLlenth = state.shoppingCartList.filter(
-        (item) => item.orderIdWithOptionsId === action.payload
-      ).length;
-      state.quantiti = state.quantiti - shoppingCartLisLlenth;
-
-      state.shoppingCartList = state.shoppingCartList.filter(
-        (item) => item.orderIdWithOptionsId !== action.payload
       );
     },
   },

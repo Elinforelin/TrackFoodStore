@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction } from "react";
+import { FC } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import CloseIcon from "@mui/icons-material/Close";
@@ -15,9 +15,7 @@ import { MenuListItem } from "../../store/shoppingCart/type";
 import { useShoppingCartItem } from "./useShoppingCartItem";
 
 export type ShoppingCartItemProps = {
-  item: MenuListItem;
-  // quantitiOfProduct: number;
-  // setQuantitiOfProduct: Dispatch<SetStateAction<number>>;
+  item: { id: string; list: MenuListItem[] };
 };
 
 export const ShoppingCartItem: FC<ShoppingCartItemProps> = ({ item }) => {
@@ -29,20 +27,20 @@ export const ShoppingCartItem: FC<ShoppingCartItemProps> = ({ item }) => {
     amountOfProduct,
     inputIsEmpty,
     onBlurdHandler,
-  } = useShoppingCartItem({ item });
+  } = useShoppingCartItem(item);
 
   return (
-    <li key={item.id} className={classes.item}>
+    <li key={item.list[0].id} className={classes.item}>
       <div className={classes.description}>
         <div className={classes.itemImage}>
-          <CardMedia component="img" alt="food" image={item.img.src} />
+          <CardMedia component="img" alt="food" image={item.list[0].img.src} />
         </div>
         <div className={classes.info}>
-          <div className={classes.name}>{item.name}</div>
-          <div className={classes.price}>{item.price}грн</div>
+          <div className={classes.name}>{item.list[0].name}</div>
+          <div className={classes.price}>{item.list[0].price}грн</div>
           <div className={classes.options}>
-            {item.options &&
-              item.options.map((opt) => (
+            {item.list[0].options &&
+              item.list[0].options.map((opt) => (
                 <FormControlLabel
                   key={opt.name}
                   style={{
@@ -53,11 +51,11 @@ export const ShoppingCartItem: FC<ShoppingCartItemProps> = ({ item }) => {
                   }}
                   classes={{ root: classes.FormControlLabelRoot }}
                   value={opt.name}
-                  id={item.id}
+                  id={item.list[0].id}
                   control={
                     <Checkbox
                       defaultChecked={opt.enable ? true : false}
-                      id={item.id}
+                      id={item.list[0].id}
                       disabled
                     />
                   }
@@ -79,7 +77,7 @@ export const ShoppingCartItem: FC<ShoppingCartItemProps> = ({ item }) => {
             <Button
               classes={{ outlined: classes.buttonOutlinedAdd }}
               variant="outlined"
-              onClick={() => onClickAdd(item)}
+              onClick={() => onClickAdd(item.list[0])}
             >
               <AddIcon />
             </Button>
@@ -89,13 +87,13 @@ export const ShoppingCartItem: FC<ShoppingCartItemProps> = ({ item }) => {
                 variant="standard"
                 value={amountOfProduct}
                 classes={{ root: classes.textFieldRoot }}
-                onChange={(e) => onChangeCount(e, item)}
-                id={item.id}
+                onChange={(e) => onChangeCount(e)}
+                id={item.list[0].id}
                 onBlur={onBlurdHandler}
               />
             </div>
             <Button
-              onClick={() => onClickRemove(item.id)}
+              onClick={() => onClickRemove(item.list[0])}
               disabled={+amountOfProduct === 1}
               variant="outlined"
               classes={{ outlined: classes.buttonOutlinedRemove }}
@@ -105,12 +103,12 @@ export const ShoppingCartItem: FC<ShoppingCartItemProps> = ({ item }) => {
           </div>
         </div>
 
-        <div>{item.summary} грн</div>
+        <div>{item.list[0].price * item.list.length} грн</div>
 
         <Button
           onClick={() => {
-            if (item.orderIdWithOptionsId) {
-              onClickDeleteItemFromCart(item.orderIdWithOptionsId);
+            if (item.list[0].orderIdWithOptionsId) {
+              onClickDeleteItemFromCart(item.list[0].orderIdWithOptionsId);
             }
           }}
           variant="contained"

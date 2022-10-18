@@ -23,14 +23,8 @@ type CardItemProps = {
 };
 
 export const CardItem: FC<CardItemProps> = ({ item }) => {
-  const {
-    handleClick,
-    selectOption,
-    addToCartHandler,
-    isIncludeMeat,
-    openId,
-    selectedFood,
-  } = useCardItem();
+  const { handleClick, selectOption, addToCartHandler, openId, selectedFood } =
+    useCardItem();
 
   return (
     <Card

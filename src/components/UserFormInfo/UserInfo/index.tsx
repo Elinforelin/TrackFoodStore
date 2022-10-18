@@ -1,7 +1,5 @@
 import { FC } from "react";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { FieldErrorsImpl, useForm, UseFormRegister } from "react-hook-form";
-import { object, string } from "yup";
+import { FieldErrorsImpl, UseFormRegister } from "react-hook-form";
 import { TextField } from "@mui/material";
 
 import classes from "./styles.module.scss";

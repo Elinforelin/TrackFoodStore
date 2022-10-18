@@ -1,5 +1,5 @@
 import Select from "react-select";
-import { FC, SyntheticEvent } from "react";
+import { FC } from "react";
 import { FieldErrorsImpl, UseFormRegister } from "react-hook-form";
 
 import classes from "./styles.module.scss";

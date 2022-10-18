@@ -1,5 +1,6 @@
 import { MouseEventHandler, useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { addToCart } from "../../../store/shoppingCart/reducer";
 import { MenuListItem } from "../../../store/shoppingCart/type";
 import { appropriateOptionId, generateId } from "../../../utils/utils";
@@ -31,9 +32,10 @@ export const useCardItem = () => {
     if (selectedFood !== null) {
       setSelectedFood((obj) => {
         if (!obj) return null;
+
         return {
           ...obj,
-          price: value === "М'ясо" ? obj.price + 15 : obj.price,
+          price: value === "М'ясо" && checked === true ? obj.price + 15 : 50,
           options: obj.options
             ? obj.options.map((item) =>
                 item.name !== value ? item : { ...item, enable: !item.enable }

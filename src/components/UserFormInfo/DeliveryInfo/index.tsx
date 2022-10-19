@@ -1,6 +1,12 @@
 import Select from "react-select";
 import { FC } from "react";
-import { FieldErrorsImpl, UseFormRegister } from "react-hook-form";
+import {
+  FieldErrorsImpl,
+  UseFormRegister,
+  Controller,
+  Control,
+  UseFormSetValue,
+} from "react-hook-form";
 
 import classes from "./styles.module.scss";
 
@@ -11,7 +17,9 @@ import { useDeliveryInfo } from "./useDeliveryInfo";
 export const DeliveryInfo: FC<{
   register: UseFormRegister<UserFormInputs>;
   errors: FieldErrorsImpl<UserFormInputs>;
-}> = ({ register, errors }) => {
+  control: Control<UserFormInputs>;
+  setValue: UseFormSetValue<UserFormInputs>;
+}> = ({ errors, control, setValue }) => {
   const {
     onInputChangeSelect,
     updatedArrayCities,
@@ -21,25 +29,62 @@ export const DeliveryInfo: FC<{
 
   return (
     <div className={classes.delivery}>
-      <h3>Доставка</h3>
-      <Select
-        placeholder="Оберіть місто"
-        styles={customStyles}
-        instanceId="long-value-select"
-        onInputChange={onInputChangeSelect}
-        options={updatedArrayCities}
-        {...(register("settlement"),
-        { onChange: (item) => onChangeSelect(item as SelectItemType) })}
+      <h4>Доставка</h4>
+
+      <Controller
+        name="settlement"
+        control={control}
+        render={({ field }) => (
+          <Select
+            {...field}
+            isClearable
+            styles={customStyles}
+            options={updatedArrayCities}
+            onInputChange={onInputChangeSelect}
+            placeholder="Оберіть місто"
+            onChange={(item) => {
+              setValue("settlement", item as SelectItemType, {
+                shouldDirty: true,
+              });
+              onChangeSelect(item as SelectItemType);
+            }}
+          />
+        )}
       />
-      <p className={classes.paragraph}>{errors.settlement?.label?.message}</p>
-      <Select
-        styles={customStyles}
-        placeholder="Оберіть відділеня"
-        instanceId="long-value-select"
-        options={updatedArrayWarehouses}
-        {...(register("warehouse"), { name: "warehouse" })}
+
+      <p
+        className={
+          errors.settlement?.label?.message
+            ? classes.paragraph
+            : `${classes.paragraph}${classes.paragraphHidden}`
+        }
+      >
+        {errors.settlement?.label?.message}
+      </p>
+
+      <Controller
+        name="warehouse"
+        control={control}
+        render={({ field }) => (
+          <Select
+            {...field}
+            isClearable
+            styles={customStyles}
+            options={updatedArrayWarehouses}
+            placeholder="Оберіть відділеня"
+          />
+        )}
       />
-      <p className={classes.paragraph}>{errors.warehouse?.label?.message}</p>
+
+      <p
+        className={
+          errors.warehouse?.label?.message
+            ? classes.paragraph
+            : `${classes.paragraph}${classes.paragraphHidden}`
+        }
+      >
+        {errors.warehouse?.label?.message}
+      </p>
     </div>
   );
 };

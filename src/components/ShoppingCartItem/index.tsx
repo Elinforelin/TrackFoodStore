@@ -93,7 +93,7 @@ export const ShoppingCartItem: FC<ShoppingCartItemProps> = ({ item }) => {
               />
             </div>
             <Button
-              onClick={() => onClickRemove(item.list[0])}
+              onClick={() => onClickRemove(item)}
               disabled={+amountOfProduct === 1}
               variant="outlined"
               classes={{ outlined: classes.buttonOutlinedRemove }}

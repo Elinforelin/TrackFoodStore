@@ -11,7 +11,6 @@ const headerButtons = [
   { href: "/first", name: "Основні страви" },
   { href: "/second", name: "Супи" },
   { href: "/breakfast", name: "Сніданки" },
-  // { href: "/constructor", name: "Конструктор" },
 ];
 
 export const Header: FC = () => {

@@ -1,15 +1,15 @@
 import { FC } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { object, string } from "yup";
-import classes from "../styles/userForm.module.scss";
+import { object, string, number } from "yup";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { DevTool } from "@hookform/devtools";
 
+import classes from "../styles/userForm.module.scss";
 import { UserInfo } from "../src/components/UserFormInfo/UserInfo";
 import { DeliveryInfo } from "../src/components/UserFormInfo/DeliveryInfo";
 import { Button } from "@mui/material";
-
-const phoneRegExp =
-  /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
+import { useRouter } from "next/router";
 
 const schema = object({
   firstName: string()
@@ -26,17 +26,25 @@ const schema = object({
       "Для цього поля дозволені лише алфавіт"
     )
     .min(2, "Прізвище має містити не меньше 2 символів"),
-  number: string()
-    .matches(phoneRegExp, "Недійсний номер телефону")
-    .required("Це поле є обов`язковим"),
-  settlement: object().shape({
-    value: string().required("Це поле є обов`язковим"),
-    label: string().required(),
-  }),
-  warehouse: object().shape({
-    value: string().required("Це поле є обов`язковим"),
-    label: string().required(),
-  }),
+  number: number()
+    .positive()
+    .integer()
+    .required("Це поле є обов`язковим")
+    .typeError("you must specify a number"),
+  settlement: object()
+    .shape({
+      label: string().required("Оберіть місто"),
+      value: string().required("status is required"),
+    })
+    .nullable()
+    .required("Оберіть місто"),
+  warehouse: object()
+    .shape({
+      label: string().required("Оберіть відділення"),
+      value: string().required("status is required"),
+    })
+    .nullable()
+    .required("Оберіть відділення"),
 });
 
 export type SelectItemType = {
@@ -57,23 +65,46 @@ const UserForm: FC = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<UserFormInputs>({ resolver: yupResolver(schema) });
+    control,
+    setValue,
+  } = useForm<UserFormInputs>({
+    resolver: yupResolver(schema),
+    mode: "onSubmit",
+  });
+  const { back } = useRouter();
 
   const onSubmit: SubmitHandler<UserFormInputs> = (data) => {
     console.log(data);
   };
+
+  const onClickPrevPage = () => back();
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
-      <UserInfo register={register} errors={errors} />
-      <DeliveryInfo register={register} errors={errors} />
-      <Button
-        variant="contained"
-        classes={{ root: classes.buttonRoot }}
-        type="submit"
-      >
-        Оформити замовлення
-      </Button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
+        <div className={classes.HeaderNavigation}>
+          <Button className={classes.arrowBackIcon} onClick={onClickPrevPage}>
+            <ArrowBackIcon />
+          </Button>
+          <h3>Оформлення замовлення</h3>
+        </div>
+        <UserInfo register={register} errors={errors} />
+        <DeliveryInfo
+          register={register}
+          errors={errors}
+          control={control}
+          setValue={setValue}
+        />
+        <Button
+          variant="contained"
+          classes={{ root: classes.buttonRoot }}
+          type="submit"
+        >
+          Оформити замовлення
+        </Button>
+      </form>
+      <DevTool control={control} />
+    </>
   );
 };
 

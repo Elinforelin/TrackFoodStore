@@ -32,8 +32,8 @@ export const useShoppingCartItem = (item: {
     );
   };
 
-  const onClickRemove = (item: MenuListItem) => {
-    dispatch(removeFromCart(item));
+  const onClickRemove = (item: { id: string; list: MenuListItem[] }) => {
+    dispatch(removeFromCart(item.id));
   };
 
   const onChangeCount = (

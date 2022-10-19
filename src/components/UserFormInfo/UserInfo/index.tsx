@@ -1,9 +1,9 @@
+import { TextField } from "@mui/material";
 import { FC } from "react";
 import { FieldErrorsImpl, UseFormRegister } from "react-hook-form";
-import { TextField } from "@mui/material";
 
-import classes from "./styles.module.scss";
 import { UserFormInputs } from "../../../../pages/userForm";
+import classes from "./styles.module.scss";
 
 export const UserInfo: FC<{
   errors: FieldErrorsImpl<UserFormInputs>;
@@ -11,25 +11,50 @@ export const UserInfo: FC<{
 }> = ({ register, errors }) => {
   return (
     <div className={classes.arrangement}>
-      <h3>Оформлення замовлення</h3>
+      <h4>Особиста інформація</h4>
       <TextField
         placeholder="Ім'я"
         {...register("firstName")}
         classes={{ root: classes.textFieldRoot }}
       />
-      <p className={classes.paragraph}>{errors.firstName?.message}</p>
+      <p
+        className={
+          errors.firstName?.message
+            ? classes.paragraph
+            : `${classes.paragraph}${classes.paragraphHidden}`
+        }
+      >
+        {errors.firstName?.message}
+      </p>
       <TextField
         classes={{ root: classes.textFieldRoot }}
         placeholder="Прізвище"
         {...register("lastName")}
       />
-      <p className={classes.paragraph}>{errors.lastName?.message}</p>
+      <p
+        className={
+          errors.lastName?.message
+            ? classes.paragraph
+            : `${classes.paragraph}${classes.paragraphHidden}`
+        }
+      >
+        {errors.lastName?.message}
+      </p>
       <TextField
         placeholder="Номер телефону"
+        type="number"
         {...register("number")}
         classes={{ root: classes.textFieldRoot }}
       />
-      <p className={classes.paragraph}>{errors.number?.message}</p>
+      <p
+        className={
+          errors.number?.message
+            ? classes.paragraph
+            : `${classes.paragraph}${classes.paragraphHidden}`
+        }
+      >
+        {errors.number?.message}
+      </p>
     </div>
   );
 };

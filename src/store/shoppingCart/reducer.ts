@@ -34,7 +34,6 @@ const shoppingCartSlice = createSlice({
       const productInCart = state.shoppingCartList.find(
         (prod) => prod.id === action.payload
       );
-      console.log(action.payload, productInCart);
 
       if (productInCart) {
         productInCart?.list.pop();
@@ -44,8 +43,6 @@ const shoppingCartSlice = createSlice({
     },
 
     deleteFromCart(state, action) {
-      console.log(action.payload);
-
       const shoppingCartListLength = state.shoppingCartList.find(
         (item) => item.id === action.payload
       )?.list.length;

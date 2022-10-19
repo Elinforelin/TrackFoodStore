@@ -29,6 +29,7 @@ export const useDeliveryInfo = () => {
   };
 
   const onChangeSelect = (item: SelectItemType) => {
+    if (!item) return "";
     setSelectedSettlement(item.value);
     dispatch(fetchWarehouse(item.value));
   };
@@ -59,5 +60,6 @@ export const useDeliveryInfo = () => {
     onChangeSelect,
     updatedArrayCities,
     updatedArrayWarehouses,
+    onChangeValueSettlements,
   };
 };

@@ -16,15 +16,20 @@ import { MenuListItem } from "../../../store/shoppingCart/type";
 import classes from "./styles.module.scss";
 import { ProductOption } from "./ProductOption";
 import { useCardItem } from "./useCardItem";
-import doneImg from "../../../assets/emptyCart/check.png";
 
 type CardItemProps = {
   item: MenuListItem;
 };
 
 export const CardItem: FC<CardItemProps> = ({ item }) => {
-  const { handleClick, selectOption, addToCartHandler, openId, selectedFood } =
-    useCardItem();
+  const {
+    handleClick,
+    selectOption,
+    addToCartHandler,
+    openId,
+    selectedFood,
+    isIncludeMeat,
+  } = useCardItem();
 
   return (
     <Card
@@ -70,7 +75,7 @@ export const CardItem: FC<CardItemProps> = ({ item }) => {
           component="div"
           style={{ fontFamily: "Montserrat", marginTop: 10 }}
         >
-          {selectedFood ? selectedFood.price : item.price}
+          {isIncludeMeat ? item.price + 15 : item.price}
           грн
         </Typography>
         <CardActions
@@ -90,12 +95,6 @@ export const CardItem: FC<CardItemProps> = ({ item }) => {
             >
               Додати в корзину
             </Button>
-            <img
-              src={doneImg.src}
-              className={classes.doneImage}
-              alt=""
-              hidden
-            />
           </div>
           {item.options && (
             <div>

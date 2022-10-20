@@ -9,10 +9,9 @@ import {
 } from "react-hook-form";
 
 import classes from "./styles.module.scss";
-
 import { customStyles } from "./customSelectStyle";
-import { SelectItemType, UserFormInputs } from "../../../../pages/userForm";
 import { useDeliveryInfo } from "./useDeliveryInfo";
+import { UserFormInputs, SelectItemType } from "../../../pages/userForm";
 
 export const DeliveryInfo: FC<{
   register: UseFormRegister<UserFormInputs>;

@@ -13,7 +13,7 @@
     "start": "next start -p $PORT",
     "heroku-postbuild": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "beauty": "prettier --write src/ pages/"
+    "beauty": "prettier --write ."
   },
   "dependencies": {
     "@babel/core": "7.0.0",
@@ -27,6 +27,7 @@
     "next": "^12.2.5",
     "next-redux-wrapper": "^7.0.5",
     "react": "^18.2.0",
+    "react-confetti": "^6.1.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.34.2",
     "react-redux": "^8.0.2",

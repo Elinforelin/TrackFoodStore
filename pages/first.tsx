@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { Header } from "../src/components/Header";
-import { Menu } from "../src/components/Menu";
-import { firstDish } from "../src/constant/product";
+import { Header } from "../components/Header";
+import { Menu } from "../components/Menu";
+import { firstDish } from "../constant/product";
 import classes from "../styles/Home.module.css";
 
 const FirstDish: FC = () => {

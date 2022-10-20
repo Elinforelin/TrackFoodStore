@@ -14,7 +14,7 @@ import classes from "./styles.module.scss";
 import { MenuListItem } from "../../store/shoppingCart/type";
 import { useShoppingCartItem } from "./useShoppingCartItem";
 
-export type ShoppingCartItemProps = {
+type ShoppingCartItemProps = {
   item: { id: string; list: MenuListItem[] };
 };
 

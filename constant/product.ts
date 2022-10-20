@@ -1,16 +1,16 @@
-import meat from "../assets/meet.png";
-import corn from "../assets/corn.png";
-import pea from "../assets/pea.png";
-import grecha from "../assets/porrige/grecha.png";
-import rice from "../assets/porrige/rice.png";
-import puree from "../assets/porrige/puree.png";
-import sub from "../assets/sub.png";
-import kharchi from "../assets/kharchi.png";
-import img from "../assets/01.png";
-import img02 from "../assets/02.png";
-import img03 from "../assets/03.png";
-import img04 from "../assets/04.png";
-import pasta from "../assets/pasta.png";
+import meat from "../public/assets/meet.png";
+import corn from "../public/assets/corn.png";
+import pea from "../public/assets/pea.png";
+import grecha from "../public/assets/porrige/grecha.png";
+import rice from "../public/assets/porrige/rice.png";
+import puree from "../public/assets/porrige/puree.png";
+import sub from "../public/assets/sub.png";
+import kharchi from "../public/assets/kharchi.png";
+import img from "../public/assets/01.png";
+import img02 from "../public/assets/02.png";
+import img03 from "../public/assets/03.png";
+import img04 from "../public/assets/04.png";
+import pasta from "../public/assets/pasta.png";
 import { StaticImageData } from "next/image";
 import { MenuListItem } from "../store/shoppingCart/type";
 
@@ -25,14 +25,6 @@ type constructorProductType = {
   meat: constructorProductItemType[];
   vegetables: constructorProductItemType[];
 };
-
-// type Dishes = {
-//   id: string;
-//   name: string;
-//   img: StaticImageData;
-//   price: number;
-//   options?: { name: string; enable: boolean }[];
-// };
 
 export const constructorProduct: constructorProductType = {
   porridges: [

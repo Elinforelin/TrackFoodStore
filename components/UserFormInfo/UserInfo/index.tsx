@@ -2,7 +2,7 @@ import { TextField } from "@mui/material";
 import { FC } from "react";
 import { FieldErrorsImpl, UseFormRegister } from "react-hook-form";
 
-import { UserFormInputs } from "../../../../pages/userForm";
+import { UserFormInputs } from "../../../pages/userForm";
 import classes from "./styles.module.scss";
 
 export const UserInfo: FC<{

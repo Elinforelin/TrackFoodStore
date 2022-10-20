@@ -10,7 +10,7 @@ import {
   selectWarehouse,
 } from "../../../store/userForm/select";
 import { setSelectedSettlement } from "../../../store/userForm/reducer";
-import { SelectItemType } from "../../../../pages/userForm";
+import { SelectItemType } from "../../../pages/userForm";
 
 type ItemType = {
   Description: string;

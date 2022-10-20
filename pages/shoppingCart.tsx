@@ -1,14 +1,13 @@
 import { FC, useMemo } from "react";
 import { useSelector } from "react-redux";
-
-import { Header } from "../src/components/Header";
-import { selectShoppingCart } from "../src/store/shoppingCart/select";
-import classes from "../styles/ShoppingCart.module.scss";
-
-import emptyCart from "../src/assets/emptyCart/emptyCart.png";
-import { ShoppingCartItem } from "../src/components/ShoppingCartItem";
 import { Button } from "@mui/material";
 import { useRouter } from "next/router";
+
+import { Header } from "../components/Header";
+import { selectShoppingCart } from "../store/shoppingCart/select";
+import classes from "../styles/ShoppingCart.module.scss";
+import emptyCart from "../public/assets/emptyCart/emptyCart.png";
+import { ShoppingCartItem } from "../components/ShoppingCartItem";
 
 const ShoppingCart: FC = () => {
   const router = useRouter();

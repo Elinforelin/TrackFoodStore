@@ -6,23 +6,16 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 import classes from "./styles.module.scss";
 import { HeaderShoppingCartIcon } from "./HeaderShoppingCartIcon";
-
-const headerButtons = [
-  { href: "/first", name: "Основні страви" },
-  { href: "/second", name: "Супи" },
-  { href: "/breakfast", name: "Сніданки" },
-];
+import { headerButtons } from "../../constant/headerPath";
 
 export const Header: FC = () => {
   const { pathname, back } = useRouter();
-
-  const onClickPrevPage = () => back();
 
   return (
     <div className={classes.headerContainer}>
       {pathname === "/shoppingCart" ? (
         <div className={classes.shoppingCartHeaderNavigation}>
-          <Button className={classes.arrowBackIcon} onClick={onClickPrevPage}>
+          <Button className={classes.arrowBackIcon} onClick={back}>
             <ArrowBackIcon />
           </Button>
           <h3 className={classes.shoppingCartTitle}>Кошик</h3>

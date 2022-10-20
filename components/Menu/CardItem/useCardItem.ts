@@ -35,7 +35,6 @@ export const useCardItem = () => {
 
         return {
           ...obj,
-          price: value === "М'ясо" && checked === true ? obj.price + 15 : 50,
           options: obj.options
             ? obj.options.map((item) =>
                 item.name !== value ? item : { ...item, enable: !item.enable }

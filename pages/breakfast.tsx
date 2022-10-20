@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { Header } from "../src/components/Header";
-import { Menu } from "../src/components/Menu";
-import { sweetPorige } from "../src/constant/product";
+import { Header } from "../components/Header";
+import { Menu } from "../components/Menu";
+import { sweetPorige } from "../constant/product";
 import classes from "../styles/Home.module.css";
 
 const Breakfast: FC = () => {

@@ -10,7 +10,9 @@
   top: 0;
   background-color: #fff;
   z-index: 5;
-  max-width: 425px;
+  max-width: 480px;
+  left: 50%;
+  transform: translateX(-50%);
   .shoppingCartHeaderNavigation {
     height: 50px;
     display: flex;

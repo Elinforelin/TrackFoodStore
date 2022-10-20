@@ -6,8 +6,8 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { DevTool } from "@hookform/devtools";
 
 import classes from "../styles/userForm.module.scss";
-import { UserInfo } from "../src/components/UserFormInfo/UserInfo";
-import { DeliveryInfo } from "../src/components/UserFormInfo/DeliveryInfo";
+import { UserInfo } from "../components/UserFormInfo/UserInfo";
+import { DeliveryInfo } from "../components/UserFormInfo/DeliveryInfo";
 import { Button } from "@mui/material";
 import { useRouter } from "next/router";
 
@@ -30,7 +30,7 @@ const schema = object({
     .positive()
     .integer()
     .required("Це поле є обов`язковим")
-    .typeError("you must specify a number"),
+    .typeError("Необхідно вказати номер"),
   settlement: object()
     .shape({
       label: string().required("Оберіть місто"),
@@ -72,18 +72,17 @@ const UserForm: FC = () => {
     mode: "onSubmit",
   });
   const { back } = useRouter();
+  const router = useRouter();
 
   const onSubmit: SubmitHandler<UserFormInputs> = (data) => {
-    console.log(data);
+    router.push("/completedOrder");
   };
-
-  const onClickPrevPage = () => back();
 
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
         <div className={classes.HeaderNavigation}>
-          <Button className={classes.arrowBackIcon} onClick={onClickPrevPage}>
+          <Button className={classes.arrowBackIcon} onClick={back}>
             <ArrowBackIcon />
           </Button>
           <h3>Оформлення замовлення</h3>

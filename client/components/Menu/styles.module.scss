@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 10px;
+  margin-top: 90px;
+  .title {
+    color: rgb(107, 91, 91);
+  }
+  .menuList {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    .root {
+      -moz-box-shadow: 0 0 15px rgb(156, 155, 155);
+      -webkit-box-shadow: 0 0 15px rgb(156, 155, 155);
+      box-shadow: 0 0 15px rgb(156, 155, 155);
+      padding: 5px;
+      border-radius: 20px;
+      margin: 5px;
+      max-width: 152px;
+
+      & button {
+        font-size: 14px;
+        color: orangered;
+        text-transform: lowercase;
+      }
+      .cardActionsRoot {
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        margin: 0 auto;
+        font-family: "Montserrat";
+        position: relative;
+
+        .option {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-family: "Montserrat";
+          & div + span {
+            font-family: "Montserrat";
+          }
+          .listItemText > span {
+            font-family: "Montserrat";
+          }
+        }
+        .collapseRoot {
+          position: absolute;
+          top: 70px;
+          right: -7px;
+          background-color: rgb(255, 255, 255);
+          font-family: "Montserrat";
+          width: 152px;
+          box-sizing: border-box;
+          border-end-end-radius: 20px;
+          border-end-start-radius: 20px;
+          z-index: 5;
+          box-shadow: 0 15px 15px rgb(146, 146, 146);
+        }
+        .listItemButtonRoot {
+          display: block;
+          padding-top: 0;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

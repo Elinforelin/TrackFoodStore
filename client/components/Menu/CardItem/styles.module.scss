@@ -1,0 +1,62 @@
+.root {
+  -moz-box-shadow: 0 0 15px rgb(156, 155, 155) !important;
+  -webkit-box-shadow: 0 0 15px rgb(156, 155, 155) !important;
+  box-shadow: 0 0 15px rgb(156, 155, 155) !important;
+  padding: 5px;
+  border-radius: 20px !important;
+  margin: 5px;
+  max-width: 152px;
+
+  & button {
+    font-size: 14px;
+    color: orangered;
+    text-transform: lowercase;
+  }
+  .cardActionsRoot {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-family: "Montserrat";
+    position: relative;
+    .doneImage {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 17px;
+      right: 5px;
+    }
+    .option {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "Montserrat";
+      & div + span {
+        font-family: "Montserrat";
+      }
+      .listItemText > span {
+        font-family: "Montserrat";
+      }
+    }
+    .collapseRoot {
+      position: absolute;
+      top: 70px;
+      right: -7px;
+      background-color: rgb(255, 255, 255);
+      font-family: "Montserrat";
+      width: 152px;
+      box-sizing: border-box;
+      border-end-end-radius: 20px;
+      border-end-start-radius: 20px;
+      z-index: 5;
+      box-shadow: 0 15px 15px rgb(146, 146, 146);
+    }
+    .listItemButtonRoot {
+      display: block;
+      padding-top: 0;
+      justify-content: center;
+    }
+  }
+}

@@ -1,4 +1,5 @@
-import { FC, useMemo } from "react";
+import { NextPage } from "next";
+import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { Button } from "@mui/material";
 import { useRouter } from "next/router";
@@ -9,7 +10,7 @@ import classes from "./ShoppingCart.module.scss";
 import emptyCart from "../../assets/emptyCart/cartEmpty.png";
 import { ShoppingCartItem } from "../../components/ShoppingCartItem";
 
-const ShoppingCart: FC = () => {
+const ShoppingCart: NextPage = () => {
   const router = useRouter();
   const shoppingCart = useSelector(selectShoppingCart);
 

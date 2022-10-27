@@ -1,11 +1,11 @@
 import { InputAdornment, TextField } from "@mui/material";
-import { FC } from "react";
+import { NextPage } from "next";
 import { FieldErrorsImpl, UseFormRegister } from "react-hook-form";
 import { UserFormInputs } from "../../../pages/userForm";
 
 import classes from "./styles.module.scss";
 
-export const UserInfo: FC<{
+export const UserInfo: NextPage<{
   errors: FieldErrorsImpl<UserFormInputs>;
   register: UseFormRegister<UserFormInputs>;
 }> = ({ register, errors }) => {
@@ -60,6 +60,21 @@ export const UserInfo: FC<{
       >
         {errors.number?.message}
       </p>
+      {/*<TextField*/}
+      {/*    placeholder="Пошта"*/}
+      {/*    type="email"*/}
+      {/*    {...register("email")}*/}
+      {/*    classes={{ root: classes.textFieldRoot }}*/}
+      {/*/>*/}
+      {/*<p*/}
+      {/*    className={*/}
+      {/*        errors.email?.message*/}
+      {/*            ? classes.paragraph*/}
+      {/*            : `${classes.paragraph}${classes.paragraphHidden}`*/}
+      {/*    }*/}
+      {/*>*/}
+      {/*    {errors.email?.message}*/}
+      {/*</p>*/}
     </div>
   );
 };

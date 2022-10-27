@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="38d60915-8aa7-4bfc-b578-0dd8149af7e6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Header/HeaderShoppingCartIcon/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Header/HeaderShoppingCartIcon/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Header/HeaderShoppingCartIcon/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Header/HeaderShoppingCartIcon/styles.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Header/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Header/styles.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Menu/CardItem/ProductOption/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Menu/CardItem/ProductOption/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Menu/CardItem/ProductOption/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Menu/CardItem/ProductOption/styles.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Menu/CardItem/ProductOption/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Menu/CardItem/ProductOption/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Menu/CardItem/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Menu/CardItem/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Menu/CardItem/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Menu/CardItem/styles.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Menu/CardItem/useCardItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Menu/CardItem/useCardItem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Menu/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Menu/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Menu/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Menu/styles.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/ShoppingCartItem/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/ShoppingCartItem/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/ShoppingCartItem/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/ShoppingCartItem/styles.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/ShoppingCartItem/useShoppingCartItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/ShoppingCartItem/useShoppingCartItem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/UserFormInfo/DeliveryInfo/customSelectStyle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/UserFormInfo/DeliveryInfo/customSelectStyle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/UserFormInfo/DeliveryInfo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/UserFormInfo/DeliveryInfo/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/UserFormInfo/DeliveryInfo/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/UserFormInfo/DeliveryInfo/styles.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/UserFormInfo/DeliveryInfo/useDeliveryInfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/UserFormInfo/DeliveryInfo/useDeliveryInfo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/UserFormInfo/UserInfo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/UserFormInfo/UserInfo/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/UserFormInfo/UserInfo/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/UserFormInfo/UserInfo/styles.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/constant/headerPath.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/constant/headerPath.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/constant/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/constant/product.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/hooks/useWindowSize.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/hooks/useWindowSize.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/breakfast/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/breakfast/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/completedOrder/completedOrder.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/completedOrder/completedOrder.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/completedOrder/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/completedOrder/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/first/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/first/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/second/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/second/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/shoppingCart/ShoppingCart.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/shoppingCart/ShoppingCart.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/shoppingCart/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/shoppingCart/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/userForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/userForm/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/userForm/userForm.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/userForm/userForm.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/rootType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/rootType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/shoppingCart/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/shoppingCart/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/shoppingCart/select.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/shoppingCart/select.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/shoppingCart/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/shoppingCart/type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/userForm/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/userForm/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/userForm/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/userForm/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/userForm/select.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/userForm/select.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/userForm/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/store/userForm/type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/styles/Home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/Home.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/utils/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header/HeaderShoppingCartIcon/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header/HeaderShoppingCartIcon/styles.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header/styles.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Menu/CardItem/ProductOption/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Menu/CardItem/ProductOption/styles.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Menu/CardItem/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Menu/CardItem/styles.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Menu/CardItem/useCardItem.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Menu/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Menu/styles.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ShoppingCartItem/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ShoppingCartItem/styles.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ShoppingCartItem/useShoppingCartItem.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserFormInfo/DeliveryInfo/customSelectStyle.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserFormInfo/DeliveryInfo/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserFormInfo/DeliveryInfo/styles.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserFormInfo/DeliveryInfo/useDeliveryInfo.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserFormInfo/UserInfo/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserFormInfo/UserInfo/styles.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/constant/headerPath.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/constant/product.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useWindowSize.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/breakfast.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/completedOrder.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/first.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/second.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/shoppingCart.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/userForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/completedOrder/10606146_9800.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/corn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/emptyCart/cartEmpty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/emptyCart/check.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/emptyCart/emptyCart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/kharchi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/meet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/pasta.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/pea.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/porrige/grecha.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/porrige/puree.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/porrige/rice.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/sub.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/rootType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/shoppingCart/reducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/shoppingCart/select.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/shoppingCart/type.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/store.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/userForm/action.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/userForm/reducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/userForm/select.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/userForm/type.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Constructor.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Home.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/ShoppingCart.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/completedOrder.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/userForm.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/utils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2GaAE6EmaAuW50VSws1TFaH2E5R" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "ts.external.directory.path": "C:\\Users\\user\\WebstormProjects\\TrackFoodStore\\client\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\WebstormProjects\TrackFoodStore\server\sendgrid" />
+      <recent name="C:\Users\user\WebstormProjects\TrackFoodStore\server" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="38d60915-8aa7-4bfc-b578-0dd8149af7e6" name="Changes" comment="" />
+      <created>1666616206746</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666616206746</updated>
+      <workItem from="1666616210455" duration="542000" />
+      <workItem from="1666616757878" duration="3801000" />
+      <workItem from="1666622161245" duration="1103000" />
+      <workItem from="1666684249397" duration="33859000" />
+      <workItem from="1666856166973" duration="377000" />
+      <workItem from="1666856599265" duration="5279000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
